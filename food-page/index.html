@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MalangTrip</title>
+    <meta name="description" content="MalangTrip - What to Eat Today" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" aria-label="Primary">
+      <div class="container header-row">
+        <div class="brand">
+          <a class="logo" href="#" aria-label="MalangTrip home">MalangTrip</a>
+        </div>
+
+        <form class="header-search" action="#" role="search" aria-label="Search places">
+          <label class="sr-only" for="header-search-input">Search</label>
+          <span class="icon icon-search" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+              <path
+                d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+              <path
+                d="M21 21l-4.3-4.3"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          <input id="header-search-input" type="search" name="q" placeholder="Search" />
+        </form>
+
+        <div class="header-actions" aria-label="Account actions">
+          <a class="btn btn-primary" href="#">Sign Up</a>
+          <a class="btn btn-outline" href="#">Log in</a>
+        </div>
+      </div>
+
+      <nav class="subnav" aria-label="Browse categories">
+        <div class="container subnav-row">
+          <a class="subnav-item" href="#">
+            <span class="subnav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <path
+                  d="M12 2l2.4 6.9H22l-5.6 4 2.2 7.1L12 15.9 5.4 20l2.2-7.1L2 8.9h7.6L12 2Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span>Recommendation</span>
+          </a>
+          <a class="subnav-item" href="#">
+            <span class="subnav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <path
+                  d="M12 21s7-4.7 7-11a7 7 0 1 0-14 0c0 6.3 7 11 7 11Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+              </svg>
+            </span>
+            <span>Attraction</span>
+          </a>
+          <a class="subnav-item" href="#">
+            <span class="subnav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <path
+                  d="M4 21V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8 21v-4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v4"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                />
+                <path
+                  d="M8 7h2M14 7h2M8 10h2M14 10h2"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <span>Hotel</span>
+          </a>
+          <a class="subnav-item" href="#">
+            <span class="subnav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                <path
+                  d="M7 3v18M17 3v18"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M9 7h6M9 12h6M9 17h6"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M12 3c2.2 2.2 2.2 5.8 0 8-2.2-2.2-2.2-5.8 0-8Z"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+            <span>Food</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-label="Hero">
+        <div class="container hero-inner">
+          <h1>What to Eat Today</h1>
+          <form class="hero-search" action="#" role="search" aria-label="Search foods">
+            <label class="sr-only" for="hero-search-input">Search foods</label>
+            <span class="icon icon-search hero-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                <path
+                  d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                />
+                <path
+                  d="M21 21l-4.3-4.3"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </span>
+            <input id="hero-search-input" type="search" name="q" placeholder="" aria-label="Search" />
+          </form>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="top-kuliner">
+        <h2 id="top-kuliner">Top Kuliner di Malang</h2>
+        <div class="card-grid card-grid-3" role="list">
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=70"
+              alt="Restaurant interior"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Bakso President</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5">
+                  <span aria-hidden="true">★★★★★</span>
+                </div>
+                <span class="reviews">(17/30)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=70"
+              alt="Coffee shop interior"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">8 oz Coffee Studio</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5">
+                  <span aria-hidden="true">★★★★★</span>
+                </div>
+                <span class="reviews">(17/30)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=70"
+              alt="Cafe front"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Roewong Tamu Coffee and space</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5">
+                  <span aria-hidden="true">★★★★★</span>
+                </div>
+                <span class="reviews">(17/30)</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="benefits container" aria-label="Benefits">
+        <div class="benefit">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+              <path
+                d="M16.5 11a3.5 3.5 0 1 0-3.5-3.5A3.5 3.5 0 0 0 16.5 11Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+              <path
+                d="M7.5 12a3 3 0 1 0-3-3 3 3 0 0 0 3 3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+              />
+              <path
+                d="M3 21v-1.3c0-2.2 1.8-4 4-4h1.2c2.2 0 4 1.8 4 4V21"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M12 21v-1.6c0-2.8 2.2-5 5-5h1c2.8 0 5 2.2 5 5V21"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <p>Ramai dikunjungi oleh wisatawan</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+              <path
+                d="M7 3v18"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+              <path
+                d="M11 3v6a3 3 0 0 1-3 3H7"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17 3v18"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+              <path
+                d="M14 7h6"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+              />
+            </svg>
+          </div>
+          <p>Rasa makanan yang enak yang telah direview banyak orang</p>
+        </div>
+
+        <div class="benefit">
+          <div class="benefit-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+              <path
+                d="M6 3h12v18l-6-4-6 4V3Z"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <p>Mendapat review yang baik dari banyak pengunjung</p>
+        </div>
+      </section>
+
+      <section class="section container" aria-labelledby="daftar-tempat">
+        <h2 id="daftar-tempat">Daftar Tempat Makan</h2>
+        <div class="card-grid card-grid-6" role="list">
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=1200&q=70"
+              alt="Restaurant night view"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Timur Teresang by Tiga Panorama</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5"><span aria-hidden="true">★★★★★</span></div>
+                <span class="reviews">(7/10)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=1200&q=70"
+              alt="Cafe interior"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Vionata Coffee</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5"><span aria-hidden="true">★★★★★</span></div>
+                <span class="reviews">(7/10)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1200&q=70"
+              alt="Restaurant garden"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Taman India Resto</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5"><span aria-hidden="true">★★★★★</span></div>
+                <span class="reviews">(7/10)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=1200&q=70"
+              alt="Restaurant view"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Puncakifu Pito</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5"><span aria-hidden="true">★★★★★</span></div>
+                <span class="reviews">(7/10)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?auto=format&fit=crop&w=1200&q=70"
+              alt="Cafe storefront"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Robuca</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5"><span aria-hidden="true">★★★★★</span></div>
+                <span class="reviews">(7/10)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img
+              class="card-img"
+              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=70"
+              alt="Restaurant night lights"
+              loading="lazy"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Timsleep?</h3>
+              <div class="card-meta">
+                <div class="stars" aria-label="Rating 5 out of 5"><span aria-hidden="true">★★★★★</span></div>
+                <span class="reviews">(7/10)</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Footer">
+      <div class="container footer-top">
+        <div class="footer-links" aria-label="Footer links">
+          <div class="footer-col">
+            <h3 class="footer-title">Recommendation</h3>
+            <ul>
+              <li><a href="#">Attraction</a></li>
+              <li><a href="#">Hotel</a></li>
+              <li><a href="#">Restaurant</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-social" aria-label="Social media">
+          <h3 class="footer-title">Media Sosial</h3>
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <span class="social-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                    <path
+                      d="M14 8h2V5h-2c-2.2 0-4 1.8-4 4v2H8v3h2v7h3v-7h2.2l.8-3H13V9c0-.6.4-1 1-1Z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span>Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <span class="social-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                    <path
+                      d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+                      stroke="currentColor"
+                      stroke-width="1.8"
+                    />
+                    <path
+                      d="M17.5 6.5h.01"
+                      stroke="currentColor"
+                      stroke-width="3"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <span>Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <span class="social-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none">
+                    <path
+                      d="M22 6.1c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.2 1.7-2.1-.8.5-1.6.8-2.5 1A4 4 0 0 0 10 8.2c0 .3 0 .6.1.9-3.3-.2-6.2-1.8-8.1-4.3-.3.6-.5 1.2-.5 2 0 1.4.7 2.7 1.9 3.4-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4-.3.1-.7.1-1.1.1-.2 0-.5 0-.7-.1.5 1.7 2.1 2.9 3.9 2.9A8 8 0 0 1 2 18.3 11.3 11.3 0 0 0 8.3 20c7.3 0 11.3-6 11.3-11.3V8.2c.8-.6 1.4-1.3 2-2.1Z"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+                <span>Twitter</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <small>
+          ©2024 MalangTrip. Kelompok T. Project Akhir Mata Kuliah Desain Antarmuka Pengguna
+        </small>
+      </div>
+    </footer>
+  </body>
+</html>
