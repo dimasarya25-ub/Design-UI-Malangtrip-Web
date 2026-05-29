@@ -1,0 +1,804 @@
+/* =========================================================
+   MALANGTRIP – Attraction Detail Page
+   style.css
+   =========================================================
+   Index
+   1.  CSS Variables & Reset
+   2.  Container
+   3.  Navbar
+   4.  Category Navigation
+   5.  Page Content wrapper
+   6.  Destination Header
+   7.  Image Gallery
+   8.  Detail Tabs
+   9.  Facility Pills
+   10. Recommendation Cards
+   11. Footer
+   12. Responsive – Tablet (768–1199px)
+   13. Responsive – Mobile (≤ 767px)
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   1.  CSS VARIABLES & RESET
+   --------------------------------------------------------- */
+:root {
+  /* Brand colours */
+  --navy:        #101842;
+  --yellow:      #FFED4E;
+  --bg:          #FFFFFF;
+  --white:       #FFFFFF;
+  --black:       #000000;
+  --gray-text:   #7D7D7D;
+  --gray-border: #BEBEBE;
+
+  /* Typography */
+  --font-main: 'Poppins', sans-serif;
+  --font-icon: 'Roboto', sans-serif;
+
+  /* Radii */
+  --r-card: 15px;
+  --r-btn:  40px;
+
+  /* Layout */
+  --max-w:    1280px;
+  --pad-x:    60px;
+
+  /* Animation */
+  --ease: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin:     0;
+  padding:    0;
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: var(--font-main);
+  background:  var(--bg);
+  color:       var(--black);
+  overflow-x:  hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  width:   100%;
+  height:  100%;
+  object-fit: cover;
+}
+
+a  { 
+  text-decoration: none; 
+  color: inherit; 
+}
+ul { 
+  list-style: none; 
+}
+button { 
+  cursor: pointer; 
+  font-family: var(--font-main); 
+  border: none; 
+}
+
+
+/* ---------------------------------------------------------
+   2.  CONTAINER
+   --------------------------------------------------------- */
+.container {
+  max-width: var(--max-w);
+  margin:    0 auto;
+  padding:   0 var(--pad-x);
+}
+
+
+/* ---------------------------------------------------------
+   3.  NAVBAR
+   --------------------------------------------------------- */
+.navbar {
+  position:   sticky;
+  top:        0;
+  z-index:    100;
+  background: var(--white);
+  height:     90px;
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.navbar__inner {
+  height:          100%;
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             24px;
+}
+
+/* Logo + Search grouped on the left */
+.navbar__left {
+  display:     flex;
+  align-items: center;
+  gap:         18px;
+}
+
+/* Logo */
+.navbar__logo {
+  font-family:    var(--font-main);
+  font-weight:    700;
+  font-size:      26px;
+  color:          var(--navy);
+  letter-spacing: -0.4px;
+  white-space:    nowrap;
+}
+
+/* Search bar */
+.navbar__search {
+  display:     flex;
+  align-items: center;
+  gap:         8px;
+  width:       260px;
+  height:      42px;
+  padding:     0 16px;
+  background:  var(--white);
+  border:      1px solid var(--gray-border);
+  border-radius: var(--r-btn);
+  transition:  border-color var(--ease), box-shadow var(--ease);
+}
+
+.navbar__search:focus-within {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(16, 24, 66, 0.06);
+}
+
+.search-icon { 
+  olor: var(--gray-text); 
+  flex-shrink: 0; 
+}
+
+.navbar__search input {
+  flex:        1;
+  border:      none;
+  outline:     none;
+  background:  transparent;
+  font-family: var(--font-icon);
+  font-size:   14px;
+  color:       var(--black);
+}
+
+.navbar__search input::placeholder { 
+  color: var(--gray-border); 
+}
+
+/* Auth buttons */
+.navbar__auth {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+  white-space: nowrap;
+}
+
+.btn {
+  display:       inline-flex;
+  align-items:   center;
+  justify-content: center;
+  height:        40px;
+  padding:       0 22px;
+  border-radius: var(--r-btn);
+  font-size:     14px;
+  font-weight:   500;
+  transition:    all var(--ease);
+}
+
+.btn--signup {
+  background: var(--black);
+  color:      var(--white);
+}
+.btn--signup:hover {
+  opacity:   0.82;
+  transform: scale(1.02);
+}
+
+.btn--login {
+  background: transparent;
+  color:      var(--black);
+  border:     1.5px solid var(--black);
+}
+.btn--login:hover {
+  background: var(--black);
+  color:      var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   4.  CATEGORY NAVIGATION
+   --------------------------------------------------------- */
+.category-nav {
+  background:    var(--white);
+  border-bottom: 1px solid var(--gray-border);
+}
+
+.category-nav__inner {
+  display:     flex;
+  align-items: center;
+  gap:         32px;
+  height:      50px;
+  overflow-x:  auto;
+}
+
+/* Hide scrollbar on category menu */
+.category-nav__inner::-webkit-scrollbar { 
+  display: none; 
+}
+
+.cat-item {
+  display:         flex;
+  align-items:     center;
+  gap:             7px;
+  font-family:     var(--font-icon);
+  font-size:       15px;
+  color:           var(--gray-text);
+  white-space:     nowrap;
+  padding-bottom:  2px;
+  transition:      color var(--ease);
+}
+
+.cat-item:hover         { 
+  color: var(--black); 
+}
+.cat-item--active       { 
+  color: var(--black); font-weight: 500; 
+}
+
+
+/* ---------------------------------------------------------
+   5.  PAGE CONTENT WRAPPER
+   --------------------------------------------------------- */
+.page-content { 
+  padding: 40px 0 72px; 
+}
+
+
+/* ---------------------------------------------------------
+   6.  DESTINATION HEADER
+   --------------------------------------------------------- */
+.dest-header { 
+  margin-bottom: 22px; 
+}
+
+.dest-title {
+  font-size:   32px;
+  font-weight: 600;
+  color:       var(--black);
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.dest-rating {
+  display:     flex;
+  align-items: center;
+  gap:         7px;
+}
+
+.rating-score {
+  font-size:   15px;
+  font-weight: 400;
+  color:       var(--black);
+}
+
+.stars {
+  color:          var(--yellow);
+  font-size:      16px;
+  letter-spacing: 1px;
+  /* Outlined star for half via opacity trick */
+}
+
+.star { 
+  display: inline-block; 
+}
+.star--half { 
+  opacity: 0.45; 
+}
+
+.rating-count {
+  font-size: 13px;
+  color:     var(--gray-text);
+}
+
+
+/* ---------------------------------------------------------
+   7.  IMAGE GALLERY
+   --------------------------------------------------------- */
+.gallery {
+  display:               grid;
+  grid-template-columns: 1fr 220px;
+  gap:                   10px;
+  height:                390px;
+  margin-bottom:         36px;
+}
+
+/* Main large image */
+.gallery__main {
+  border-radius: var(--r-card);
+  overflow:      hidden;
+  cursor:        pointer;
+}
+
+.gallery__main img {
+  transition: transform 0.45s ease;
+}
+
+.gallery__main:hover img { 
+  transform: scale(1.04); 
+}
+
+/* Right sidebar column */
+.gallery__side {
+  display:               grid;
+  grid-template-rows:    1fr 130px; /* portrait tall, thumbs short */
+  gap:                   10px;
+}
+
+/* Portrait image – top of sidebar */
+.gallery__portrait {
+  border-radius: var(--r-card);
+  overflow:      hidden;
+  cursor:        pointer;
+}
+
+.gallery__portrait img { 
+  transition: transform 0.45s ease; 
+}
+.gallery__portrait:hover img { 
+  transform: scale(1.05); 
+}
+
+/* 2 × 2 thumbnail grid */
+.gallery__thumbs {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:    1fr 1fr;
+  gap:                   8px;
+}
+
+.gallery__thumb {
+  border-radius: var(--r-card);
+  overflow:      hidden;
+  cursor:        pointer;
+}
+
+.gallery__thumb img { 
+  transition: transform 0.45s ease; 
+}
+.gallery__thumb:hover img { 
+  transform: scale(1.07); 
+}
+
+
+/* ---------------------------------------------------------
+   8.  DETAIL TABS
+   --------------------------------------------------------- */
+.detail-tabs {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-border);
+}
+
+/* Tab bar */
+.tabs {
+  display:        flex;
+  gap:            0;
+  border-bottom:  1px solid var(--gray-border);
+  margin-bottom:  18px;
+}
+
+.tab {
+  position:      relative;
+  padding:       10px 20px 10px 0;
+  margin-right:  16px;
+  font-family:   var(--font-main);
+  font-size:     15px;
+  font-weight:   400;
+  color:         var(--gray-text);
+  background:    transparent;
+  transition:    color var(--ease);
+}
+
+/* Active underline */
+.tab::after {
+  content:    '';
+  position:   absolute;
+  bottom:     -1px;
+  left:       0;
+  width:      100%;
+  height:     2px;
+  background: var(--black);
+  transform:  scaleX(0);
+  transform-origin: left;
+  transition: transform var(--ease);
+}
+
+.tab:hover             { 
+  color: var(--black); 
+}
+.tab--active           { 
+  color: var(--black); font-weight: 500; 
+}
+.tab--active::after    { 
+  transform: scaleX(1); 
+}
+
+/* Description paragraph */
+.desc-text {
+  font-size:   15px;
+  font-weight: 300;
+  color:       var(--gray-text);
+  line-height: 1.65;
+  max-width:   520px;
+}
+
+
+/* ---------------------------------------------------------
+   9.  FACILITY PILLS
+   --------------------------------------------------------- */
+.facilities { 
+  margin-bottom: 56px; 
+}
+
+.facility-pills {
+  display:   flex;
+  flex-wrap: wrap;
+  gap:       12px 14px;
+}
+
+.pill {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  height:          40px;
+  padding:         0 24px;
+  border:          1.5px solid var(--black);
+  border-radius:   var(--r-btn);
+  font-family:     var(--font-main);
+  font-size:       14px;
+  font-weight:     400;
+  color:           var(--black);
+  cursor:          pointer;
+  transition:      background var(--ease), color var(--ease),
+                   border-color var(--ease);
+  white-space:     nowrap;
+}
+
+.pill:hover {
+  background:   var(--navy);
+  color:        var(--white);
+  border-color: var(--navy);
+}
+
+
+/* ---------------------------------------------------------
+   10. RECOMMENDATION CARDS
+   --------------------------------------------------------- */
+.recommendations { 
+  margin-bottom: 64px; 
+}
+
+.section-heading {
+  font-size:     24px;
+  font-weight:   600;
+  color:         var(--black);
+  margin-bottom: 20px;
+}
+
+.rec-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   20px;
+}
+
+/* Card */
+.rec-card {
+  background:    var(--white);
+  border-radius: var(--r-card);
+  overflow:      hidden;
+  box-shadow:    0 2px 12px rgba(0, 0, 0, 0.06);
+  transition:    transform var(--ease), box-shadow var(--ease),
+                 opacity 0.5s ease;
+  /* Entrance animation initial state */
+  opacity:       0;
+  transform:     translateY(20px);
+}
+
+.rec-card.visible {
+  opacity:   1;
+  transform: translateY(0);
+}
+
+.rec-card:hover {
+  transform:  translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Card image */
+.rec-card__img-wrap {
+  height:   190px;
+  overflow: hidden;
+}
+
+.rec-card__img-wrap img {
+  transition: transform 0.45s ease;
+}
+
+.rec-card:hover .rec-card__img-wrap img { 
+  transform: scale(1.06); 
+}
+
+/* Card body */
+.rec-card__body { 
+  padding: 16px 18px 18px; 
+}
+
+.rec-card__name {
+  font-size:     15px;
+  font-weight:   600;
+  color:         var(--black);
+  margin-bottom: 8px;
+  line-height:   1.4;
+}
+
+.rec-card__rating {
+  display:     flex;
+  align-items: center;
+  gap:         6px;
+}
+
+.rec-card__rating .rating-score { 
+  font-size: 13px; 
+}
+.rec-card__rating .stars        { 
+  font-size: 13px; 
+}
+.rec-card__rating .rating-count { 
+  font-size: 12px; 
+}
+
+
+/* ---------------------------------------------------------
+   11. FOOTER
+   --------------------------------------------------------- */
+.footer {
+  background:  var(--bg);
+  border-top:  1px solid var(--gray-border);
+}
+
+.footer__inner {
+  display:         flex;
+  justify-content: space-between;
+  align-items:     flex-start;
+  padding:         44px 0 44px;
+}
+
+/* Left – nav links */
+.footer__nav {
+  display:        flex;
+  flex-direction: column;
+  gap:            14px;
+}
+
+.footer__nav a {
+  font-size:  15px;
+  font-weight:400;
+  color:      var(--black);
+  transition: color var(--ease);
+}
+
+.footer__nav a:hover { 
+  color: var(--navy); 
+}
+
+/* Right – social */
+.footer__social-title {
+  font-size:     18px;
+  font-weight:   600;
+  color:         var(--black);
+  margin-bottom: 18px;
+}
+
+.social-list {
+  display:        flex;
+  flex-direction: column;
+  gap:            14px;
+}
+
+.social-list li {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+  font-size:   15px;
+  color:       var(--black);
+  cursor:      pointer;
+  transition:  color var(--ease);
+}
+
+.social-list li:hover { 
+  color: var(--navy); 
+}
+
+/* Copyright bar */
+.footer__copy {
+  border-top: 1px solid var(--gray-border);
+  padding:    16px var(--pad-x);
+  text-align: center;
+}
+
+.footer__copy p {
+  font-size: 13px;
+  color:     var(--gray-text);
+}
+
+
+/* ---------------------------------------------------------
+   12. RESPONSIVE – TABLET (768 – 1199 px)
+   --------------------------------------------------------- */
+@media (max-width: 1199px) {
+  :root {
+    --pad-x: 30px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 190px;
+    height: 340px;
+  }
+
+  .dest-title { 
+    font-size: 28px; 
+  }
+
+  .rec-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: 1fr 170px;
+    height: 300px;
+  }
+
+  .rec-grid { 
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+
+/* ---------------------------------------------------------
+   13. RESPONSIVE – MOBILE (≤ 767 px)
+   --------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root { 
+    --pad-x: 18px; 
+  }
+
+  /* Navbar */
+  .navbar { 
+    height: auto; 
+  }
+
+  .navbar__inner {
+    flex-wrap:    wrap;
+    padding:      14px 0;
+    gap:          12px;
+  }
+
+  .navbar__left {
+    width:    100%;
+    flex-wrap: wrap;
+    gap:      12px;
+  }
+
+  .navbar__logo  { 
+    font-size: 22px; 
+  }
+
+  .navbar__search {
+    width: 100%;
+  }
+
+  .navbar__auth  { 
+    margin-left: auto; 
+  }
+
+  /* Category */
+  .category-nav__inner { 
+    gap: 20px; 
+  }
+
+  /* Page top */
+  .page-content { 
+    padding: 28px 0 48px; 
+  }
+
+  .dest-title { 
+    font-size: 22px; 
+  }
+
+  /* Gallery – stack vertically */
+  .gallery {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 8px;
+  }
+
+  .gallery__main { 
+    height: 220px; 
+  }
+
+  .gallery__side {
+    grid-template-rows: 160px auto;
+    height: auto;
+  }
+
+  .gallery__thumbs { 
+    height: 100px; 
+  }
+
+  /* Tabs */
+  .tabs { 
+    gap: 0; 
+    overflow-x: auto; 
+  }
+  .tabs::-webkit-scrollbar { 
+    display: none; 
+  }
+  .tab { 
+    padding: 10px 16px 10px 0; 
+    white-space: nowrap; 
+  }
+
+  .tab-list {
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+
+  .tab-list li {
+    margin-bottom: 8px;
+    color: #7D7D7D;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Pills */
+  .facility-pills { 
+    gap: 10px; 
+  }
+  .pill { 
+    height: 36px; 
+    padding: 0 18px; 
+    font-size: 13px; 
+  }
+
+  /* Rec cards – single column */
+  .rec-grid { 
+    grid-template-columns: 1fr; 
+  }
+
+  .rec-card { 
+    opacity: 1; transform: none; 
+  }   /* disable entrance on mobile */
+
+  /* Footer */
+  .footer__inner {
+    flex-direction: column;
+    gap: 32px;
+    padding: 36px 0;
+  }
+
+  .footer__copy { 
+    padding: 14px var(--pad-x); 
+  }
+}
