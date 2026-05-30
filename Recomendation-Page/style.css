@@ -1,0 +1,218 @@
+body {
+  font-family: "Poppins";
+  font-size: 20px; }
+
+    /* TOPBAR */
+    .topbar {
+      left: 0; right:0;
+      z-index: 1000;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      height: 60px;
+      display: flex; align-items: center;
+      padding: 0 24px; gap: 16px;
+      margin-left: 10%;
+    }
+
+    
+    .topbar h1{
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+
+    .topbar .logo { font-size: 1.4rem; font-weight: 700; color: #111; text-decoration: none; white-space: nowrap; }
+
+    .topbar .search-wrap { flex: 1; max-width: 340px; position: relative; }
+    .topbar .search-wrap input {
+      width: 100%; padding: 7px 14px 7px 36px;
+      border: 1px solid #d1d5db; border-radius: 999px;
+      font-size: 0.88rem; background: #f9fafb; outline: none;
+    }
+    .topbar .search-wrap i {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      color: #9ca3af; font-size: 0.9rem;
+    }
+    .topbar .btn-signup {
+      background: #111; color: #fff; border: none;
+      border-radius: 999px; padding: 7px 18px;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    }
+    .topbar .btn-login {
+      background: #fff; color: #111; border: 1.5px solid #111;
+      border-radius: 999px; padding: 6px 18px;
+      font-size: 0.85rem; font-weight: 600; cursor: pointer;
+    }
+
+    /* STICKY NAV */
+    .sticky-nav {
+      font-family: "Roboto";
+      position: sticky; top:0; left: 0; right: 0;
+      z-index: 999;
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex; align-items: center;
+      padding: 0 40px; height: 44px; gap: 40px;
+    
+    }
+    .sticky-nav a {
+      display: flex; align-items: center; gap: 6px;
+      padding: 5px 14px; border-radius: 999px;
+      font-size: 0.86rem; font-weight: 500; color: #374151;
+      text-decoration: none; white-space: nowrap;
+        
+    }
+    .recomendation{
+      margin-left: 10%;
+    }
+
+    .sticky-nav a:hover { background: #f3f4f6; }
+    .sticky-nav a.active { color: #1d4ed8; font-weight: 600; }
+
+    
+    /* HERO */
+    .hero {
+  
+      height: 500px;
+    
+      position: relative;
+      display: flex; 
+      align-items: center;
+    }
+    #hero_bg{
+        background: url(bgMalang2.webp) center/cover no-repeat;
+        position: absolute;
+        z-index: 1;
+        inset: 0;
+        transition: opacity 1s ease-in-out;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 20%, rgba(0, 0, 0, 0.1) 60%);
+    }
+    .hero-text { position: relative; z-index: 2; padding: 32px 48px; color: #ffffff; margin-bottom: 70px; margin-left: 70px;}
+
+    .hero-text p { font-size: 2rem; font-weight: 300; }
+    .hero-text h1 { font-size: 7rem; font-weight: 600; line-height: 1; margin-bottom: 10px; }
+    .hero-text small { font-size: 1rem; opacity: 0.7; max-width: 600px; display: block; line-height: 1.6; padding-top: 50px; }
+
+    /* CONTENT */
+    .content-wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+
+    .city-title { font-size: 1.8rem; font-weight: 700; color: #111; margin-bottom: 10px; }
+    .city-desc { font-size: 0.92rem; color: #555; line-height: 1.7; border-bottom: 1px solid #e5e7eb; padding-bottom: 28px; }
+
+    .section-title { font-size: 1.15rem; font-weight: 500; color: #111; margin: 36px 0 16px; }
+
+    /* DESTINATION CARDS */
+    .dest-card { border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.08); background: #fff; }
+    .dest-card img { width: 100%; height: 150px; object-fit: cover; }
+    .dest-card .card-body { padding: 12px 14px 14px; }
+    .dest-card .card-name { font-size: 0.92rem; font-weight: 700; color: #111; margin-bottom: 6px; }
+    .dest-card .rating { font-size: 0.82rem; color: #374151; }
+    .dest-card .rating .stars { color: #FFED4E; }
+    .dest-card .rating .count { color: #9ca3af; }
+    .dest-card .btn-detail {
+      display: block; width: 100%; margin-top: 12px;
+      background: #1d4ed8; color: #fff; border: none;
+      border-radius: 8px; padding: 8px;
+      font-size: 0.84rem; font-weight: 600; text-align: center; cursor: pointer;
+    }
+
+    /* MUNGKIN ANDA SUKA */
+    .suka-card { cursor: pointer; }
+    .suka-card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 8px; }
+    .suka-card .suka-name { font-size: 0.85rem; font-weight: 700; color: #111; margin-bottom: 4px; }
+    .suka-card .rating { font-size: 0.8rem; color: #374151; }
+    .suka-card .rating .stars { color: #FFED4E; }
+    .suka-card .rating .count { color: #9ca3af; }
+
+    /* DETAIL CARD */
+    .detail-card {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      background: #fff;
+      margin-top: 32px;
+    }
+    .detail-card img { width: 100%; height: 500px; object-fit: cover; display: block; }
+    .detail-card .detail-body { padding: 20px 22px 24px; }
+    .detail-card .detail-name { font-size: 1.7rem; font-weight: 800; color: #111; margin-bottom: 4px; }
+    .detail-card .rating { font-size: 0.85rem; color: #374151; margin-bottom: 12px; }
+    .detail-card .rating .stars { color: #f59e0b; }
+    .detail-card .rating .count { color: #9ca3af; }
+    .detail-card .detail-desc { font-size: 0.9rem; color: #555; line-height: 1.7; margin-bottom: 16px; }
+    .detail-card .fasilitas-label { font-size: 0.85rem; font-weight: 600; color: #111; margin-bottom: 8px; }
+    .badge-fasilitas {
+      display: inline-block;
+      border: 1px solid #d1d5db;
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.82rem;
+      color: #374151;
+      margin-right: 6px;
+      background: #fff;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+      padding: 36px 60px;
+    }
+    .footer-links a {
+      display: block; color: #374151; text-decoration: none;
+      font-size: 0.9rem; margin-bottom: 8px;
+    }
+    .footer-links a:hover { color: #1d4ed8; }
+    .footer-sosmed-title { font-size: 0.95rem; font-weight: 700; color: #111; margin-bottom: 12px; }
+    .footer-sosmed a {
+      display: flex; align-items: center; gap: 8px;
+      color: #374151; text-decoration: none;
+      font-size: 0.9rem; margin-bottom: 8px;
+    }
+    .footer-sosmed a:hover { color: #1d4ed8; }
+    .footer-bottom {
+      border-top: 1px solid #e5e7eb;
+      margin-top: 24px; padding-top: 16px;
+      font-size: 0.78rem; color: #9ca3af; text-align: center;
+    }
+
+
+    /* Buat animasi*/
+    @keyframes animate {
+    
+      from{
+        opacity: 0.5;
+        scale: 0.5;
+      }
+      to{
+        opacity: 1;
+        scale: 1;
+      }}
+
+    @keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hero-text {
+    animation: slideIn 1.5s ease-out forwards;
+   
+}
+
+      .suka-card{
+        animation: animate linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;}
+
+      .dest-card{
+        animation: animate linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 30%;}
